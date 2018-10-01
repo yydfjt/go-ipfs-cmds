@@ -174,7 +174,7 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	re := NewResponseEmitter(w, r.Method, req, WithRequestBodyErrorChan(bodyErrChan))
+	re := NewResponseEmitter(w, r.Method, req, withRequestBodyErrorChan(bodyErrChan))
 	h.root.Call(req, re, h.env)
 }
 
